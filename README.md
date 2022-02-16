@@ -2,7 +2,7 @@
 DER SPIEGEL templates for Svelte components
 
 
-## Content
+## Utility components
 
 
 ### [TextAlign.svelte](./TextAlign.svelte)
@@ -40,4 +40,30 @@ export let height = undefined;
 >
     <div>stuff to be measured</div>
 </SizeDetector>
+```
+
+
+## Animation and transition components
+
+
+### [NumberSwitcher.svelte](./NumberSwitcher.svelte)
+
+Animate the transition between two numbers (or characters).
+
+Example: [Silvester countdown](https://interactive.spiegel.de/int/pub/ressort/hp/2021/silvester-countdown/v0/widget.14.html).
+
+*Properties*
+```{JavaScript}
+// the number (character) itself
+export let number;
+// y-offset for the transition (in px)
+export let offset = 50;
+// transition duration (in ms)
+export let duration = 600;
+// delay (in ms)
+export let delay = 0;
+// number(character) width (in px), needed for non-shifting layout
+export let width = 32;
+// deactivate transition
+export let deactivate = false;
 ```
