@@ -67,3 +67,20 @@ export let width = 32;
 // deactivate transition
 export let deactivate = false;
 ```
+
+
+## Simple HTML components 
+
+
+### [Button.svelte](./Button.svelte)
+
+A simple "DER SPIEGEL"-Button with event dispatcher
+
+Example: [75 Jahre DER SPIEGEL](https://www.spiegel.de/geschichte/75-jahre-spiegel-welche-ausgabe-lag-bei-ihrer-geburt-am-kiosk-a-ffa0d302-19a9-487a-85b5-1ab42be4a45e)
+
+*Properties*
+```{JavaScript}
+// the text shown on the Button
+export let text;
+// dispatch the click event
+on:buttonClicked
