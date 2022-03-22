@@ -24,7 +24,6 @@
     button {
       @include fontFamily('SpiegelSans4UI-Bold');
       color: #fff;
-      width: 108px;
       height: 44px;
       background: $primary-base;
       border-radius: 1.5px;
@@ -35,5 +34,8 @@
       cursor: pointer;
       border: none;
       justify-content: space-between;
+      span:nth-child(2) {
+        padding-left: 13px;
+      }
     }
 </style>
