@@ -84,3 +84,37 @@ Example: [75 Jahre DER SPIEGEL](https://www.spiegel.de/geschichte/75-jahre-spieg
 export let text;
 // dispatch the click event
 on:buttonClicked
+```
+
+### [CardLayout.svelte](./CardLayout.svelte)
+
+Erzeugt einen Schatten um einen Inhalt, sodass dieser wie auf einer Karte präsentiert wird 
+
+Example: [Wahlergebnis der Präsidentschartswahl in Frankreich 2022](https://interactive.spiegel.de/int/pub/ressort/politik/wahlen/france_president/v0/stichwahl.html?round=2)
+
+*Properties: Keine*
+
+*Unnamed Slot*
+```{HTML}
+<CardLayout>
+    <!-- Markup -->
+</CardLayout>
+```
+
+*Hinweis:* Durch den Schatten gibt es ein äußeres Margin, das im SCSS der Komponente definiert ist und den Card-Content einrückt. 
+Diese Margin-Variable sollte in allgemeine Konfiguration gezogen werden, 
+um Inhalte ohne Card-Layout (z.B. Headlines) in gleichem Maße einzurücken.
+```{SCSS}
+$horizontalSpacingCards: 0.2rem !default;
+```
+
+### [Header.svelte](./Header.svelte)
+
+Header-Komponente mit Titel und Unterzeile, Titel-Schriftgröße von Fensterbreite abhängig
+
+*Properties*
+```{JavaScript}
+// Beide Werte optinal; Typ: String
+export let title;
+export let subtitle;
+```
