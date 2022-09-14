@@ -118,3 +118,14 @@ Header-Komponente mit Titel und Unterzeile, Titel-Schriftgröße von Fensterbrei
 export let title;
 export let subtitle;
 ```
+
+
+### [Sources.svelte](./Sources.svelte)
+
+Quellen-Komponente mit vorangestelltem SPIEGEL-"S&nbsp;&bull;"
+
+*Properties*
+```{JavaScript}
+// Typ: String; bei Leer-String oder Leerzeichen keine Ausgabe
+export let sources;
+```
