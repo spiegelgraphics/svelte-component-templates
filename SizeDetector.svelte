@@ -9,6 +9,7 @@
 
     function handleResize() {
         clearTimeout(tid);
+        if (!container) return;
         ({ width, height } = container.getBoundingClientRect());
     }
 
