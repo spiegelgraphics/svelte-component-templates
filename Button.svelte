@@ -43,5 +43,23 @@
      &:active{
         background: $primary-darker;
      }
+     @media (prefers-color-scheme: dark) {
+        color: $primary-base;
+        path{
+          stroke: $primary-base;
+        }
+        background: #fff;
+        &:hover{
+            color: $primary-dark;
+            background: #fff;
+            path{
+              stroke: $primary-dark;
+            }
+          }
+        &:active{
+            background: #fff;
+            color: $primary-darker;
+          }
+    }
     }
 </style>
