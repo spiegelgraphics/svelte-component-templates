@@ -37,5 +37,11 @@
       span:nth-child(2) {
         padding-left: 13px;
       }
+      &:hover{
+        background: $primary-dark;
+     }
+     &:active{
+        background: $primary-darker;
+     }
     }
 </style>
