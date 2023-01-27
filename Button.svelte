@@ -11,15 +11,15 @@
 <button on:click={ () => dispatch( "buttonClicked", {} ) }>
     <span>{text}</span>
     <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+        <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
             <path d="M1.33325 1.66663L4.66659 4.99996L1.33325 8.33329" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
     </span>
 </button>
 
 <style lang="scss">
-    @import '../../../../../../_lib/es6/scss/fonts/fonts';
-    @import '../scss/config';
+    @import './src/lib/scss/fonts/fonts';
+    @import './src/scss/config';
 
     button {
       @include fontFamily('SpiegelSans4UI-Bold');
