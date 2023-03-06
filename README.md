@@ -129,3 +129,13 @@ Quellen-Komponente mit vorangestelltem SPIEGEL-"S&nbsp;&bull;"
 // Typ: String; bei Leer-String oder Leerzeichen keine Ausgabe
 export let sources;
 ```
+
+
+### [Link.svelte](./Link.svelte)
+
+Simpler Artikel-Link (ohne Spiegel-Signet).
+
+*Properties*
+```{JavaScript}
+export let href;
+```
