@@ -150,7 +150,7 @@
         </div>
 
         <!-- Item der select-list -->
-        <div class="list-item" slot="item" let:item let:index>
+        <div slot="item" class="listItem" let:item let:index>
           {item[dataKeys.label]}
         </div>
 
@@ -179,7 +179,7 @@
     @include fontFamily("SpiegelSansUI-Regular");
   }
 
-  .list-item {
+  .listItem {
     height: var(--item-height);
     cursor: pointer;
     user-select: none;
