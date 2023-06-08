@@ -18,11 +18,10 @@
 </button>
 
 <style lang="scss">
-    @import './src/lib/scss/fonts/fonts';
     @import './src/scss/config';
 
     button {
-      @include fontFamily('SpiegelSans4UI-Bold');
+      @include fontFamily('SpiegelSansUI-Bold');
       color: #fff;
       height: 44px;
       background: $primary-base;
