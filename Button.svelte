@@ -17,15 +17,16 @@
     </span>
 </button>
 
+
 <style lang="scss">
-    @import './src/scss/config';
+    @import "./src/scss/config";
 
     button {
-      @include fontFamily('SpiegelSansUI-Bold');
+      @include fontFamily("SpiegelSansUI-Bold");
       color: #fff;
       height: 44px;
       background: $primary-base;
-      border-radius: 1.5px;
+      border-radius: $spBorderRadius;
       display: flex;
       flex-direction: row;
       align-items: center;

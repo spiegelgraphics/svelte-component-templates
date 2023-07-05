@@ -1,5 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onMount } from "svelte";
 
     export let width = undefined;
     export let height = undefined;
@@ -20,7 +20,7 @@
 
     onMount(() => {
         setTimeout(() => {
-            window.dispatchEvent(new Event('resize'));
+            window.dispatchEvent(new Event("resize"));
             throttleResize();
         }, 125);
 
@@ -29,6 +29,7 @@
         return () => clearTimeout(tid);
     });
 </script>
+
 
 <svelte:window on:resize={throttleResize} />
 

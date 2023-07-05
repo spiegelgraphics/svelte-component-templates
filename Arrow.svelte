@@ -1,18 +1,18 @@
 <script>
 
-    export let upwards = false;
+  export let upwards = false;
 
 </script>
 
 
 <div class="chevron" class:open={upwards}>
 
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-         style="baseProfile:tiny;stroke-linecap:round;stroke-linejoin:round;version:1">
-        <g class="chevron-down">
-            <path d="M6 9l6 6 6 -6" stroke-width="1.5" stroke-linecap="round"></path>
-        </g>
-    </svg>
+  <svg viewBox="0 0 24 24" fill="none"
+       style="baseProfile:tiny;stroke-linecap:round;stroke-linejoin:round;version:1">
+    <g class="chevron-down">
+      <path d="M6 9l6 6 6 -6" stroke-width="1.5" stroke-linecap="round"></path>
+    </g>
+  </svg>
 </div>
 
 
@@ -30,7 +30,7 @@
       height: 24px;
       stroke: #989694;
 
-      .chevron-down{
+      .chevron-down {
         transition: transform 360ms ease-in-out;
         transform-origin: 50% 50%;
       }

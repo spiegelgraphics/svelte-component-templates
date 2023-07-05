@@ -1,10 +1,10 @@
 <div class="card">
-    <slot/>
+  <slot/>
 </div>
 
 <style lang="scss">
 
-  @import "../scss/config";
+  @import "./src/scss/config";
 
   $horizontalSpacingCards: 0.2rem !default;
 
@@ -23,7 +23,7 @@
       background-color: #2a2929;
     }
 
-    &:hover{
+    &:hover {
       background-color: #fafafa;
       @media (prefers-color-scheme: dark) {
         background-color: #302f2f;

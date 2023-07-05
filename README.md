@@ -12,7 +12,7 @@ Align child elements to the type area of spiegel.de.
 *Properties*
 ``` javascript
 // type of the app: iframe or embed
-export let type = 'iframe';
+export let type = "iframe";
 
 // disable component (if true, no alignment takes place)
 export let disable = false;
@@ -101,9 +101,9 @@ Example: [Wahlergebnis der Präsidentschartswahl in Frankreich 2022](https://int
 </CardLayout>
 ```
 
-*Hinweis:* Durch den Schatten gibt es ein äußeres Margin, das im SCSS der Komponente definiert ist und den Card-Content einrückt. 
+*Hinweis:* Durch den Schatten gibt es ein Margin, das im SCSS der Komponente definiert ist und den Card-Content einrückt. 
 Diese Margin-Variable sollte in allgemeine Konfiguration gezogen werden, 
-um Inhalte ohne Card-Layout (z.B. Headlines) in gleichem Maße einzurücken.
+um Inhalte ohne Card-Layout (z.B. Headlines) auf gleicher Höhe auszurichten.
 ```SCSS
 $horizontalSpacingCards: 0.2rem !default;
 ```
@@ -147,6 +147,10 @@ beim Tippen in das Suchfeld werden die Listen-Einträge nach dem Suchwort gefilt
 
 Diese Komponente ist ein Wrapper für das Package [svelte-select](https://www.npmjs.com/package/svelte-select), das ab Version 5 vorausgesetzt wird.
 Bei Benutzung der Komponenten-Datei ist also `npm i svelte-select` auszuführen.
+
+>Das Package "svelte-select" wurde im Juni 2023 in der Version `5.6.1` verwendet (`wirtschaft/2023/ladestationen`).
+<br>
+
 
 *Properties*
 ``` javascript
@@ -216,3 +220,4 @@ Der Default-Placeholder `Suche` des Input-Feldes kann in den `selectOptions` üb
 ```
 
 Weitere Optionen sind im Code der Komponente in `const defaultSelectOptions` nachzulesen.
+

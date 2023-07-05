@@ -1,5 +1,5 @@
 <script>
-    export let type = 'iframe'; // alternative: embed
+    export let type = "iframe"; // alternative: embed
     export let disable = false;
 </script>
 

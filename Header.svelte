@@ -1,22 +1,22 @@
 <script>
-    export let title = "";
-    export let subtitle = "";
+  export let title = "";
+  export let subtitle = "";
 </script>
 
 
 <div class="header">
-    {#if title}
-        <div class="title">{title}</div>
-    {/if}
-    {#if subtitle}
-        <div class="subtitle">{subtitle}</div>
-    {/if}
+  {#if title}
+    <div class="title">{title}</div>
+  {/if}
+  {#if subtitle}
+    <div class="subtitle">{subtitle}</div>
+  {/if}
 </div>
 
 
 <style lang="scss">
 
-  @import "../scss/config";
+  @import "./src/scss/config";
 
   .header {
     line-height: 1.1;
