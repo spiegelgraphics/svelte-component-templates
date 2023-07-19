@@ -138,6 +138,15 @@ Simpler Artikel-Link (ohne Spiegel-Signet).
 export let href;
 ```
 
+### [LoadingAnimation.svelte](./LoadingAnimation.svelte)
+
+Ladeanimation (rotierender Halbkreis um SPIEGEL-S) mit Mindesthöhe von 140 Pixeln
+
+*Properties*
+``` JavaScript
+export let height = 333;
+```
+
 ### [AutoCompleteSelect.svelte](./AutoCompleteSelect.svelte)
 
 > Hinweis: Diese Komponente ist in der Kategorie "Simple HTML components" nur eingeschränkt richtig platziert.
