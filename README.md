@@ -147,6 +147,52 @@ Ladeanimation (rotierender Halbkreis um SPIEGEL-S) mit Mindesthöhe von 140 Pixe
 export let height = 333;
 ```
 
+### [PaddedMultiline.svelte](./PaddedMultiline.svelte)
+
+Text-Block-Element (span, display: inline-block), 
+bei dem nur der Text und nicht das ganze Element 
+mit Hintergrundfarbe und Padding versehen wird. 
+Das Padding wird bei Zeilenumbruch in jeder Zeile gezeigt,
+nicht nur zu Beginn und am Ende des Textes.
+
+*Unnamed Slot*
+```sveltehtml
+<script>
+  import PaddedMultiline from "$compontents/PaddedMultiline.svelte";
+</script>
+
+<PaddedMultiline>
+  <!-- Text bzw {@html text} -->
+</PaddedMultiline>
+```
+
+*Properties*
+``` javascript
+// Wert optinal; Typ: Object
+export let options = {};
+```
+
+*Default-Options*
+``` javascript
+{
+    background: "rgba(0, 0, 0, 0.9)",
+    color: "rgba(255, 255, 255, 0.9)",
+    padding: "0.2rem 0.5rem"
+    borderRadius: 1.5px
+}
+```
+Default-Options werden mit Options gemerged.
+
+Das Options-Objekt kann die Werte wie in Default-Options enthalten.
+Für `background` und `color` gibt es die Varianten mit Suffix für
+Dark- und Light-Mode: `background_dm`, `color_dm`, `background_lm`, `color_lm`.
+
+Gibt es diese Varianten nicht, werden die Werte `background` und `color`
+für den Light-Mode verwendet, und im Dark-Mode vertauscht genutzt:
+`color` definiert den Hintergrund, `background` die Schriftfarbe.
+
+
+
 ### [AutoCompleteSelect.svelte](./AutoCompleteSelect.svelte)
 
 > Hinweis: Diese Komponente ist in der Kategorie "Simple HTML components" nur eingeschränkt richtig platziert.
@@ -180,6 +226,10 @@ export const clearInput
 
 *Usage*
 ```sveltehtml
+<script>
+  import AutoCompleteSelect from "$compontents/AutoCompleteSelect.svelte";
+</script>
+
 <AutoCompleteSelect
     selectLabel="Select mit Einträge-Liste komplexer Daten"
     selectOptions="{{
