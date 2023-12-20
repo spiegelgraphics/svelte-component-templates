@@ -18,6 +18,22 @@ export let type = "iframe";
 export let disable = false;
 ```
 
+### [Dimensions.svelte](./Dimensions.svelte)
+
+Determine the size of device screen height using lvh or svh.
+
+*Properties*
+``` javascript
+// width and height can be bound from outside
+export let width = 1;
+export let height = 1;
+export let type = "lvh"
+```
+
+*Usage*
+```sveltehtml
+<Dimensions bind:height={$height} type="lvh"/>
+```
 
 ### [SizeDetector.svelte](./SizeDetector.svelte)
 
