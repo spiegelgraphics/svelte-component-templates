@@ -34,6 +34,7 @@
     <div
         class:lvh={type === "lvh"}
         class:dvh={type === "dvh"}
+        class:svh={type === "svh"}
         bind:this={container}
         use:watchResize={throttleResize}
     ></div>
@@ -48,13 +49,15 @@
             position: absolute;
             top: 0px;
             left: 0px;
-            &.lvh {
-                opacity: 0;                
+            opacity: 0;                
+            &.lvh {                    
                 height: 100lvh;
             }
-            &.dvh {
-                opacity: 0;                
+            &.dvh {                
                 height: 100dvh;
+            }
+            &.svh {                
+                height: 100svh;
             }
         }
     }
