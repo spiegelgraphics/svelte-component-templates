@@ -8,11 +8,19 @@
 
     let tid;
     let container;
+    let initialScrollY = window.scrollY;
 
     const handleResize = () => {
         if (!container) return;
         clearTimeout(tid);
-        ({ width, height } = container.getBoundingClientRect());
+        
+        const isScrollEvent = window.scrollY !== initialScrollY;
+
+        if (!isScrollEvent || height < 23) {
+            ({ width, height } = container.getBoundingClientRect());         
+        }
+
+        initialScrollY = window.scrollY;
     };
 
     const throttleResize = () => {
@@ -27,6 +35,10 @@
         }, 125);
 
         return () => clearTimeout(tid);
+    });
+    
+    window.addEventListener("scroll", () => {
+        handleResize(); 
     });
 </script>
 

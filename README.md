@@ -20,7 +20,8 @@ export let disable = false;
 
 ### [Dimensions.svelte](./Dimensions.svelte)
 
-Determine the size of device screen height using lvh or svh.
+Determine the size of device screen height using lvh, dvh or svh.
+No resizing while scrolling (f.e. in Safari iOS)
 
 *Properties*
 ``` javascript
