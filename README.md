@@ -297,3 +297,38 @@ Der Default-Placeholder `Suche` des Input-Feldes kann in den `selectOptions` üb
 
 Weitere Optionen sind im Code der Komponente in `const defaultSelectOptions` nachzulesen.
 
+
+
+### [Dropdown.svelte](./Dropown.svelte)
+
+Die Komponente erwartet eine solche config:
+``` javascript
+config = {
+    startOption: 0,
+    selectOnInit: 0,
+    items: [
+        {label: "Ah", value: "2"},
+        {label: "Be", complex: {a: -1, b: 12}}
+    ]
+}
+```
+
+und kann z.B. so eingebaut werden:
+```sveltehtml
+<script>
+    const config = {
+        startOption: 0,
+        selectOnInit: 0,
+        items: [
+            {label: "Ah", value: "2"},
+            {label: "Be", complex: {a: -1, b: 12}}
+        ]
+    };
+    
+    const changeHandler = ev => {
+        console.log( ev.detail );
+    };
+</script>
+
+<DropDown {config} on:dropdownChanged={changeHandler}/>
+````
