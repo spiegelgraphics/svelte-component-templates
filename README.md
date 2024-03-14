@@ -18,22 +18,24 @@ export let type = "iframe";
 export let disable = false;
 ```
 
-### [Dimensions.svelte](./Dimensions.svelte)
+### [ViewHeight.svelte](./ViewHeight.svelte)
 
-Determine the size of device screen height using lvh, dvh or svh.
-No resizing while scrolling (f.e. in Safari iOS)
+Determine the size of device screen height using vh.
+
 
 *Properties*
 ``` javascript
-// width and height can be bound from outside
-export let width = 1;
-export let height = 1;
-export let type = "lvh"
+	export let visualHeight;
+	export let headerHeight;
+	export let footerHeight;
+	export let contentHeight;
+	export let safeHeight;
+	export let threshold = 180;
 ```
 
 *Usage*
 ```sveltehtml
-<Dimensions bind:height={$height} type="lvh"/>
+<ViewHeight bind:visualHeight bind:contentHeight bind:footerHeight />
 ```
 
 ### [SizeDetector.svelte](./SizeDetector.svelte)
