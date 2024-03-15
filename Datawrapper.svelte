@@ -8,7 +8,7 @@
 
 	function setViz() {
 		[viz = undefined] =
-			container?.getElementsByTagName('datawrapper-visualization') || [];
+			container.getElementsByTagName('datawrapper-visualization') || [];
 		if (viz) observer.disconnect();
 	}
 
