@@ -1,18 +1,42 @@
 # svelte-component-templates
-DER SPIEGEL templates for Svelte components
 
+DER SPIEGEL templates for Svelte components
 
 ## Utility components
 
+### [Datawrapper.svelte](./Datawrapper.svelte)
+
+Einbau einer Datawrapper-WebComponent inklusive Zugriff auf dessen Methoden.
+
+_Properties_
+
+```JavaScript
+export let id;
+export let viz;
+```
+
+_Usage_
+
+```sveltehtml
+<Datawrapper id={DATAWRAPPER_ID} bind:viz />
+```
+
+```JavaScript
+function updateViz(key, value) {
+    if (!viz) return;
+    viz.patch(key, value);
+}
+```
 
 ### [TextAlign.svelte](./TextAlign.svelte)
 
 Align child elements to the type area of spiegel.de.
 
-*Properties*
-``` javascript
+_Properties_
+
+```javascript
 // type of the app: iframe or embed
-export let type = "iframe";
+export let type = 'iframe';
 
 // disable component (if true, no alignment takes place)
 export let disable = false;
@@ -23,15 +47,17 @@ export let disable = false;
 Determine the size of device screen height using lvh, dvh or svh.
 No resizing while scrolling (f.e. in Safari iOS)
 
-*Properties*
-``` javascript
+_Properties_
+
+```javascript
 // width and height can be bound from outside
 export let width = 1;
 export let height = 1;
-export let type = "lvh"
+export let type = 'lvh';
 ```
 
-*Usage*
+_Usage_
+
 ```sveltehtml
 <Dimensions bind:height={$height} type="lvh"/>
 ```
@@ -42,14 +68,16 @@ Determine the size of an element without using Svelte iFrames and `bind:clientWi
 
 Good for apps that will be embedded directly.
 
-*Properties*
-``` javascript
+_Properties_
+
+```javascript
 // width and height can be bound from outside
 export let width = undefined;
 export let height = undefined;
 ```
 
-*Usage*
+_Usage_
+
 ```sveltehtml
 <SizeDetector
     bind:width={width}
@@ -59,9 +87,7 @@ export let height = undefined;
 </SizeDetector>
 ```
 
-
 ## Animation and transition components
-
 
 ### [NumberSwitcher.svelte](./NumberSwitcher.svelte)
 
@@ -69,8 +95,9 @@ Animate the transition between two numbers (or characters).
 
 Example: [Silvester countdown](https://interactive.spiegel.de/int/pub/ressort/hp/2021/silvester-countdown/v0/widget.14.html).
 
-*Properties*
-``` javascript
+_Properties_
+
+```javascript
 // the number (character) itself
 export let number;
 // y-offset for the transition (in px)
@@ -85,9 +112,7 @@ export let width = 32;
 export let deactivate = false;
 ```
 
-
-## Simple HTML components 
-
+## Simple HTML components
 
 ### [Button.svelte](./Button.svelte)
 
@@ -95,32 +120,35 @@ A simple "DER SPIEGEL"-Button with event dispatcher
 
 Example: [75 Jahre DER SPIEGEL](https://www.spiegel.de/geschichte/75-jahre-spiegel-welche-ausgabe-lag-bei-ihrer-geburt-am-kiosk-a-ffa0d302-19a9-487a-85b5-1ab42be4a45e)
 
-*Properties*
-``` javascript
+_Properties_
+
+```javascript
 // the text shown on the Button
 export let text;
 // dispatch the click event
-on:buttonClicked
+on: buttonClicked;
 ```
 
 ### [CardLayout.svelte](./CardLayout.svelte)
 
-Erzeugt einen Schatten um einen Inhalt, sodass dieser wie auf einer Karte präsentiert wird 
+Erzeugt einen Schatten um einen Inhalt, sodass dieser wie auf einer Karte präsentiert wird
 
 Example: [Wahlergebnis der Präsidentschartswahl in Frankreich 2022](https://interactive.spiegel.de/int/pub/ressort/politik/wahlen/france_president/v0/stichwahl.html?round=2)
 
-*Properties: Keine*
+_Properties: Keine_
 
-*Unnamed Slot*
+_Unnamed Slot_
+
 ```sveltehtml
 <CardLayout>
     <!-- Markup -->
 </CardLayout>
 ```
 
-*Hinweis:* Durch den Schatten gibt es ein Margin, das im SCSS der Komponente definiert ist und den Card-Content einrückt. 
-Diese Margin-Variable sollte in allgemeine Konfiguration gezogen werden, 
+_Hinweis:_ Durch den Schatten gibt es ein Margin, das im SCSS der Komponente definiert ist und den Card-Content einrückt.
+Diese Margin-Variable sollte in allgemeine Konfiguration gezogen werden,
 um Inhalte ohne Card-Layout (z.B. Headlines) auf gleicher Höhe auszurichten.
+
 ```SCSS
 $horizontalSpacingCards: 0.2rem !default;
 ```
@@ -129,8 +157,9 @@ $horizontalSpacingCards: 0.2rem !default;
 
 Header-Komponente mit Titel und Unterzeile, Titel-Schriftgröße von Fensterbreite abhängig
 
-*Properties*
-``` javascript
+_Properties_
+
+```javascript
 // Beide Werte optinal; Typ: String
 export let title;
 export let subtitle;
@@ -140,8 +169,9 @@ export let subtitle;
 
 Quellen-Komponente mit vorangestelltem SPIEGEL-"S&nbsp;&bull;"
 
-*Properties*
-``` JavaScript
+_Properties_
+
+```JavaScript
 // Typ: String; bei Leer-String oder Leerzeichen keine Ausgabe
 export let sources;
 ```
@@ -150,8 +180,9 @@ export let sources;
 
 Simpler Artikel-Link (ohne Spiegel-Signet).
 
-*Properties*
-``` JavaScript
+_Properties_
+
+```JavaScript
 export let href;
 ```
 
@@ -159,20 +190,22 @@ export let href;
 
 Ladeanimation (rotierender Halbkreis um SPIEGEL-S) mit Mindesthöhe von 140 Pixeln
 
-*Properties*
-``` JavaScript
+_Properties_
+
+```JavaScript
 export let height = 333;
 ```
 
 ### [PaddedMultiline.svelte](./PaddedMultiline.svelte)
 
-Text-Block-Element (span, display: inline-block), 
-bei dem nur der Text und nicht das ganze Element 
-mit Hintergrundfarbe und Padding versehen wird. 
+Text-Block-Element (span, display: inline-block),
+bei dem nur der Text und nicht das ganze Element
+mit Hintergrundfarbe und Padding versehen wird.
 Das Padding wird bei Zeilenumbruch in jeder Zeile gezeigt,
 nicht nur zu Beginn und am Ende des Textes.
 
-*Unnamed Slot*
+_Unnamed Slot_
+
 ```sveltehtml
 <script>
   import PaddedMultiline from "$compontents/PaddedMultiline.svelte";
@@ -183,14 +216,16 @@ nicht nur zu Beginn und am Ende des Textes.
 </PaddedMultiline>
 ```
 
-*Properties*
-``` javascript
+_Properties_
+
+```javascript
 // Wert optinal; Typ: Object
 export let options = {};
 ```
 
-*Default-Options*
-``` javascript
+_Default-Options_
+
+```javascript
 {
     background: "rgba(0, 0, 0, 0.9)",
     color: "rgba(255, 255, 255, 0.9)",
@@ -198,6 +233,7 @@ export let options = {};
     borderRadius: 1.5px
 }
 ```
+
 Default-Options werden mit Options gemerged.
 
 Das Options-Objekt kann die Werte wie in Default-Options enthalten.
@@ -208,24 +244,22 @@ Gibt es diese Varianten nicht, werden die Werte `background` und `color`
 für den Light-Mode verwendet, und im Dark-Mode vertauscht genutzt:
 `color` definiert den Hintergrund, `background` die Schriftfarbe.
 
-
-
 ### [AutoCompleteSelect.svelte](./AutoCompleteSelect.svelte)
 
 > Hinweis: Diese Komponente ist in der Kategorie "Simple HTML components" nur eingeschränkt richtig platziert.
 
-Dieses Select-Element bietet nicht nur eine Auswahl-/Ausklapp-Liste, sondern auch ein "Autocomplete": 
+Dieses Select-Element bietet nicht nur eine Auswahl-/Ausklapp-Liste, sondern auch ein "Autocomplete":
 beim Tippen in das Suchfeld werden die Listen-Einträge nach dem Suchwort gefiltert.
 
 Diese Komponente ist ein Wrapper für das Package [svelte-select](https://www.npmjs.com/package/svelte-select), das ab Version 5 vorausgesetzt wird.
 Bei Benutzung der Komponenten-Datei ist also `npm i svelte-select` auszuführen.
 
->Das Package "svelte-select" wurde im Juni 2023 in der Version `5.6.1` verwendet (`wirtschaft/2023/ladestationen`).
-<br>
+> Das Package "svelte-select" wurde im Juni 2023 in der Version `5.6.1` verwendet (`wirtschaft/2023/ladestationen`).
+> <br>
 
+_Properties_
 
-*Properties*
-``` javascript
+```javascript
 // A) Datenfluss in die Komponente
 export let showSelectLabel = true;
 export let selectLabel = "";
@@ -241,7 +275,8 @@ export const selectFocused = writable(false);
 export const clearInput
 ```
 
-*Usage*
+_Usage_
+
 ```sveltehtml
 <script>
   import AutoCompleteSelect from "$compontents/AutoCompleteSelect.svelte";
@@ -260,60 +295,65 @@ export const clearInput
 {#if selectedItem}
     <p on:click={() => clearInput()}>Ausgewählt: {selectedItem.label}</p>
 {/if}
-````
+```
 
 Über dem Select-Element kann ein <b>Label</b> stehen, Text und Sichtbarkeit
 werden getrennt gesteuert.
 
 Das <b>Data-Array</b> kann entweder einfache Daten enthalten (String / Number) oder
-Objekte. Darin muss ein Feld ID/Key-artig sein, ein weiteres als Label in der Liste dienen. 
-Einfache Daten werden intern in Objekte umgewandelt: 
+Objekte. Darin muss ein Feld ID/Key-artig sein, ein weiteres als Label in der Liste dienen.
+Einfache Daten werden intern in Objekte umgewandelt:
 `["myString", 11] => [{id: "myString", label: "myString"}, {id: "11", label: "11"}]`
-und als solche mit `selectedItem` zurückgegeben. Bei Objekten im Data-Array ist das vollständige Objekt 
+und als solche mit `selectedItem` zurückgegeben. Bei Objekten im Data-Array ist das vollständige Objekt
 (nicht nur ID, Label, weitere Suchfelder) in `selectedItem.item` zu finden.
 
-In den `selectOptions: {}` können die Namen des ID- bzw. des Label-Datenfeldes festgelegt werden; die Daten 
+In den `selectOptions: {}` können die Namen des ID- bzw. des Label-Datenfeldes festgelegt werden; die Daten
 müssen nicht `id` oder `label` enthalten:
-``` javascript
+
+```javascript
 {
   dataFieldNames: {key: "iso3", label: "country"}
 }
 ```
+
 Weitere Felder des Data-Item-Objekts können als zusätzliche Suchfelder (für das Autocomplete) festgelegt werden.
-``` javascript
+
+```javascript
 {
-  additionalSearchFields: ["iso3", "continent"]
+	additionalSearchFields: ['iso3', 'continent'];
 }
 ```
-Mit `swe` könnte im Beispiel der Eintrag mit dem Label `Schweden` gefunden werden, 
+
+Mit `swe` könnte im Beispiel der Eintrag mit dem Label `Schweden` gefunden werden,
 mit `afrika` alle Länder, die diesem Kontinent im Datenfeld `continent` zugewiesen sind.
 
 Der Default-Placeholder `Suche` des Input-Feldes kann in den `selectOptions` überschrieben werden:
-``` javascript
+
+```javascript
 {
-  placeholder: "Flughafen-Suche"
+	placeholder: 'Flughafen-Suche';
 }
 ```
 
 Weitere Optionen sind im Code der Komponente in `const defaultSelectOptions` nachzulesen.
 
-
-
 ### [Dropdown.svelte](./Dropown.svelte)
 
 Die Komponente erwartet eine solche config:
-``` javascript
+
+```javascript
 config = {
-    startOption: 0,
-    selectOnInit: 0,
-    items: [
-        {label: "Ah", value: "2"},
-        {label: "Be", complex: {a: -1, b: 12}}
-    ]
-}
+	startOption: 0,
+	selectOnInit: 0,
+	items: [
+		{ label: 'Ah', value: '2' },
+		{ label: 'Be', complex: { a: -1, b: 12 } },
+	],
+};
 ```
 
 und kann z.B. so eingebaut werden:
+
 ```sveltehtml
 <script>
     const config = {
@@ -324,13 +364,13 @@ und kann z.B. so eingebaut werden:
             {label: "Be", complex: {a: -1, b: 12}}
         ]
     };
-    
+
     const changeHandler = ev => {
         console.log( ev.detail );
     };
 </script>
 
 <DropDown {config} on:dropdownChanged={changeHandler}/>
-````
+```
 
 Hallo.
