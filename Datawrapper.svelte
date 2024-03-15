@@ -13,11 +13,12 @@
 	}
 
 	onMount(() => {
-		const MutationObserver =
+		const Observer =
+			MutationObserver ||
 			window.MutationObserver ||
 			window.WebKitMutationObserver ||
 			window.MozMutationObserver;
-		observer = new MutationObserver(setViz);
+		observer = new Observer(setViz);
 		observer.observe(container, {
 			subtree: true,
 			childList: true,
