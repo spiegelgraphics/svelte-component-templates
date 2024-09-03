@@ -21,7 +21,7 @@
 	}
 
 	.title {
-		@include fontFamily('SpiegelSlabUICd-ExtraBold');
+		@include fontFamily($spSlab);
 		font-size: 1.5rem;
 		@media screen and (max-width: 488px) {
 			font-size: 1.25rem;
