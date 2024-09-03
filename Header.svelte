@@ -23,10 +23,10 @@
 	.title {
 		@include fontFamily($spSlab);
 		font-size: 1.5rem;
+		padding-bottom: 0.0625rem;
 		@media screen and (max-width: 488px) {
 			font-size: 1.25rem;
 		}
-		padding-bottom: 0.0625rem;
 	}
 
 	.subtitle {
