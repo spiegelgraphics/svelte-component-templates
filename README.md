@@ -255,8 +255,11 @@ beim Tippen in das Suchfeld werden die Listen-Einträge nach dem Suchwort gefilt
 Diese Komponente ist ein Wrapper für das Package [svelte-select](https://www.npmjs.com/package/svelte-select), das ab Version 5 vorausgesetzt wird.
 Bei Benutzung der Komponenten-Datei ist also `npm i svelte-select` auszuführen.
 
-> Das Package "svelte-select" wurde im Juni 2023 in der Version `5.6.1` verwendet (`wirtschaft/2023/ladestationen`).
-> <br>
+> Das Package "svelte-select" wurde im August 2024 in der Version `5.8.3` verwendet (`leben/2024/studentisches_wohnen`).
+> <br>Mit Vite 5 und der Import-Anweisung `import Select from 'svelte-select'` gibt es eine unschöne Fehlermeldung:<br>
+> ❌ Error: ... No known conditions for "." specifier in "svelte-select" package
+> <br>✅️ Lösung: Die Import-Anweisung erweitern:<br>
+> `import Select from "svelte-select/Select.svelte"`
 
 _Properties_
 
