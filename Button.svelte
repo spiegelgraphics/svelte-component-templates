@@ -29,7 +29,7 @@
 	@import './src/scss/config';
 
 	button {
-		@include fontFamily('SpiegelSansUI-Bold');
+		@include fontFamily($spSansBold);
 		color: #fff;
 		height: 44px;
 		background: $primary-base;
