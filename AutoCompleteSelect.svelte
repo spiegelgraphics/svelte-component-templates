@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
-	import Select from 'svelte-select';
+	import Select from 'svelte-select/Select.svelte';
 
 	export let showSelectLabel = true;
 	export let selectLabel = '';
